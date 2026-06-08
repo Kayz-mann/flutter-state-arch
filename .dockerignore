@@ -1,0 +1,21 @@
+# Keep the build context small and reproducible: never ship local build output,
+# tooling caches, IDE metadata, or generated screenshots into the image.
+.git
+.github
+.dart_tool
+build
+.idea
+.vscode
+*.iml
+.DS_Store
+
+# Screenshot harness has its own image; its node_modules must not leak in here.
+tooling/screenshots/node_modules
+artifacts
+
+# Platform folders not needed for the web build.
+android
+ios
+macos
+linux
+windows
