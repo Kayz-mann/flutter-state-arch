@@ -129,7 +129,14 @@ jobs:
             mkdir -p artifacts
             adb install -r build/app/outputs/flutter-apk/app-debug.apk
             adb shell monkey -p com.example.custom_redux -c android.intent.category.LAUNCHER 1
-            sleep 8
+            # Wait for the activity to be resumed (cold emulators show the Flutter
+            # splash for several seconds), then let the first frame draw.
+            for _ in $(seq 1 40); do
+              adb shell dumpsys activity activity com.example.custom_redux 2>/dev/null \
+                | grep -q "mResumed=true" && break
+              sleep 1
+            done
+            sleep 4
             # Verify the app is actually running (not crashed on this OS version).
             if ! adb shell pidof com.example.custom_redux >/dev/null; then
               echo "::error::App is not running on Android API ${{ matrix.api-level }}"
