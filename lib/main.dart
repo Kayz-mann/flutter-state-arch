@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'Flutter Redux State', store: store),
+      home: MyHomePage(title: 'Custom Flutter Redux State..', store: store),
     );
   }
 }
@@ -78,24 +78,24 @@ class MyHomePage extends StatelessWidget {
                   '${store.state.counterState.counter}',
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
-                  child: Text('Increment'),
+                  child: const Text('Increment'),
                   onPressed: () => store.dispatch(IncrementAction()),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
-                  child: Text('Decrement'),
+                  child: const Text('Decrement'),
                   onPressed: () => store.dispatch(DecrementAction()),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
-                  child: Text('Add 100'),
+                  child: const Text('Add 100'),
                   onPressed: () => store.dispatch(AddAction(100)),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
-                  child: Text('Increment Async'),
+                  child: const Text('Increment Async'),
                   onPressed: () => store.dispatch(IncrementActionAsync()),
                 ),
               ],

@@ -9,7 +9,7 @@ typedef Middleware<StoreState extends ReduxState> = void Function(
 Middleware<AppState> incrementMiddleware() {
   return (AppState state, ReduxAction action, Dispatcher dispatch) {
     if (action is IncrementActionAsync) {
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 2), () {
         dispatch(IncrementAction());
       });
     }
