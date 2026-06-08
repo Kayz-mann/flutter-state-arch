@@ -1,6 +1,10 @@
 # custom_redux
 
-A new Flutter project.
+[![CI](https://github.com/Kayz-mann/flutter-state-arch/actions/workflows/ci.yml/badge.svg)](https://github.com/Kayz-mann/flutter-state-arch/actions/workflows/ci.yml)
+
+A Flutter counter app built on a hand-rolled Redux (store / actions / reducer /
+middleware), with a CI pipeline that tests it and screenshots it across multiple
+device/OS profiles. See [docs/ci-cd.md](docs/ci-cd.md).
 
 ## Getting Started
 
