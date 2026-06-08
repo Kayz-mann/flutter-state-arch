@@ -47,3 +47,7 @@ app.*.map.json
 # CI/CD: generated screenshots and the screenshot harness's node deps
 /artifacts/
 tooling/screenshots/node_modules/
+
+# Local tooling / editor state (not part of the project)
+.claude/
+.vscode/
